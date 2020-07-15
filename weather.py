@@ -1,10 +1,15 @@
+import configparser
 import requests
 from pprint import pprint
 
-# basic informations
-API_key = "API KEY"
+#read the config.txt
+config = configparser.ConfigParser()
+config.read_file(open(r'config.txt'))
+API_key = config.get('Basic-Configuration', 'API_key')
+city_name = config.get('Basic-Configuration', 'city_name')
+
+# URL for API call
 base_url = "http://api.openweathermap.org/data/2.5/weather?"
-city_name = "City Name"
 
 # API call
 Final_url = base_url + "q=" + city_name + "&appid=" + API_key

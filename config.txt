@@ -1,0 +1,4 @@
+# Input without quotations
+[Basic-Configuration]
+API_key =
+city_name = 

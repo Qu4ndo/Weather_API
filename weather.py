@@ -1,6 +1,5 @@
 import configparser
 import requests
-from pprint import pprint
 import json
 
 def get_callback():
@@ -26,15 +25,9 @@ weather_data = get_callback()
 ktemp = weather_data["main"]["temp"]
 humidity = weather_data["main"]["humidity"]
 
-
 #Convert Kelvin to Celsius
 ctemp = ktemp - 273.15
 
+#Print Data
 print(int(ctemp), "C°")
 print(humidity, "%")
-
-# Parse JSON
-#parsed_data = (json.loads(weather_data))
-#print(parsed_data)
-#for x in parsed_data:
-#	print("%s: %s" % (x, parsed_data[x]))

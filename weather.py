@@ -27,7 +27,10 @@ def convert_kmh(wind_ms):
     return wind_ms * 3.6
 
 
-def parse_values(weather_data):
+def values():
+    # Get Values from API
+    weather_data = get_callback()
+
     # Parsing different values
     ktemp = weather_data["main"]["temp"]
     humidity = weather_data["main"]["humidity"]
@@ -41,10 +44,9 @@ def parse_values(weather_data):
 
 
 if __name__=="__main__":
-    weather_data = get_callback()
-    ctemp, humidity, wind = parse_values(weather_data)
+    temp, humidity, wind = values()
 
     # Print Data
-    print(int(ctemp), "C°")
+    print(int(temp), "C°")
     print(humidity, "%")
     print(int(wind), "km/h")

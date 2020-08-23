@@ -20,14 +20,18 @@ def get_callback():
 
 
 weather_data = get_callback()
-#print(weather_data)
+print(weather_data)
 
 ktemp = weather_data["main"]["temp"]
 humidity = weather_data["main"]["humidity"]
+wind_ms = weather_data["wind"]["speed"]
 
 #Convert Kelvin to Celsius
 ctemp = ktemp - 273.15
+#Convert Windspeed to km/h
+wind = wind_ms * 3.6
 
 #Print Data
 print(int(ctemp), "C°")
 print(humidity, "%")
+print(int(wind), "km/h")
